@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Password Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Secure Password Generator</h1>
+            <p class="description">Create strong, secure passwords to keep your online accounts safe from hackers</p>
+        </div>
+        
+        <div class="password-display">
+            <input type="text" class="password-field" id="password-field" readonly>
+            <button class="copy-btn" id="copy-btn">
+                <i class="far fa-copy"></i>
+            </button>
+            <div class="tooltip" id="tooltip">
+                <span class="tooltiptext" id="tooltip-text">Copy to clipboard</span>
+            </div>
+        </div>
+        
+        <div class="strength-meter">
+            <div class="strength-fill" id="strength-fill"></div>
+        </div>
+        <div class="strength-label" id="strength-label">Password strength: Very Weak</div>
+        
+        <div class="options">
+            <div class="option-group">
+                <div class="option-title">
+                    <i class="fas fa-ruler-horizontal"></i>
+                    Password Length
+                </div>
+                <div class="slider-container">
+                    <input type="range" min="8" max="32" value="16" class="slider" id="length-slider">
+                    <span class="slider-value" id="length-value">16</span>
+                </div>
+            </div>
+            
+            <div class="option-group">
+                <div class="option-title">
+                    <i class="fas fa-toggle-on"></i>
+                    Include in Password
+                </div>
+                <div class="checkboxes">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="uppercase" checked>
+                        <label for="uppercase">Uppercase Letters (A-Z)</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="lowercase" checked>
+                        <label for="lowercase">Lowercase Letters (a-z)</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="numbers" checked>
+                        <label for="numbers">Numbers (0-9)</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="symbols">
+                        <label for="symbols">Symbols (!@#$%^&*)</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <button id="generate-btn">
+                <i class="fas fa-key"></i>
+                Generate Password
+            </button>
+            <button id="reset-btn">
+                <i class="fas fa-redo"></i>
+                Reset
+            </button>
+        </div>
+        
+        <div class="password-history">
+            <div class="history-header">
+                <div class="history-title">
+                    <i class="fas fa-history"></i>
+                    Recently Generated Passwords
+                </div>
+                <button id="clear-history-btn">
+                    <i class="fas fa-trash-alt"></i>
+                    Clear History
+                </button>
+            </div>
+            <div class="history-list" id="history-list">
+                <!-- Password history will be added here -->
+            </div>
+        </div>
+    </div>
+      <script src="script.js"></script>
+  </body>
+</html>
